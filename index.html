@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo De Viagens 2.0</title>
+    <style>
+        :root {
+            --primary-grad: linear-gradient(90deg, #ff416c, #ff4b2b);
+            --btn-grad: linear-gradient(135deg, #ff9a44 0%, #fc6076 100%);
+            --btn-transporte: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --btn-jogos: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        h1.gradient-text {
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            font-weight: 800;
+            margin: 0;
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-cidades, .btn-transporte, .btn-jogos {
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-cidades {
+            background: var(--btn-grad);
+            box-shadow: 0 4px 15px rgba(252, 96, 118, 0.3);
+        }
+
+        .btn-transporte {
+            background: var(--btn-transporte);
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-jogos {
+            background: var(--btn-jogos);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-cidades:hover, .btn-transporte:hover, .btn-jogos:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            margin-top: 120px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 70vh;
+            text-align: center;
+        }
+
+        .elegant-paragraph {
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            color: #636e72;
+            max-width: 700px;
+            font-weight: 300;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px 0;
+            }
+            main { margin-top: 260px; }
+            .nav-buttons { flex-direction: column; width: 80%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="gradient-text">Oráculo De Viagens</h1>
+        <div class="nav-buttons">
+            <button class="btn-cidades" onclick="window.location.href='cidades.html'">Cidades</button>
+            <button class="btn-transporte" onclick="window.location.href='transporte.html'">Transporte</button>
+            <button class="btn-jogos" onclick="window.location.href='jogar.html'">Minijogos</button>
+        </div>
+    </header>
+
+    <main>
+        <p class="elegant-paragraph">
+            Descubra a alma de cada destino. Da <strong>geografia urbana</strong> ao 
+            <strong>clima local</strong>, fornecemos os detalhes essenciais para que sua 
+            próxima aventura seja inesquecível. Explore o mundo com clareza.
+        </p>
+    </main>
+
+</body>
+</html>
